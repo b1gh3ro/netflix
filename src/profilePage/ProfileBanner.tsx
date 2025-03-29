@@ -17,7 +17,7 @@ const ProfileBanner: React.FC = () => {
     // ✅ Replace DatoCMS with static data or another API call
     setBannerData({
       headline: "Welcome to My Portfolio",
-      profileSummary: "Full-stack developer passionate about building innovative web applications.",
+      profileSummary: "Aspiring architect and creative designer passionate about crafting immersive environments that inspire and transform. With a keen eye for spatial planning, architectural visualization, and storytelling through design, I strive to merge functionality with aesthetics. Recognized for excellence in architectural representation, BIM modeling, and real-time rendering, I bring a balance of creativity, precision, and technical expertise to every project. Eager to innovate and push boundaries in the world of architecture.",
       resumeLink: "https://www.linkedin.com/in/keiraantao",
       linkedinLink: "https://www.linkedin.com/in/keiraantao"
     });
@@ -41,7 +41,7 @@ const ProfileBanner: React.FC = () => {
 
         <div className="banner-buttons">
           <PlayButton onClick={handlePlayClick} label="Resume" />
-          <MoreInfoButton onClick={handleLinkedinClick} label="LinkedIn" />
+          <MoreInfoButton onClick={handleLinkedinClick} label="My Portfolio" />
         </div>
       </div>
     </div>
