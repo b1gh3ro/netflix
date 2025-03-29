@@ -21,7 +21,7 @@ const blogs = [
     title: "Grape Gem in Ruby on Rails: Handling User Model and API Endpoint",
     platform: "Dev.to",
     icon: <FaDev />,
-    link: "https://dev.to/samalasumanth0262/grape-gem-in-ruby-on-rails-handling-user-model-and-api-endpoint-g6d",
+    link: "https://dev.to/samalaKeira0262/grape-gem-in-ruby-on-rails-handling-user-model-and-api-endpoint-g6d",
     description: "A guide to using the Grape gem for API development in Ruby on Rails.",
   },
 ];
