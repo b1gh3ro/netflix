@@ -11,8 +11,8 @@ const ContactMe: React.FC = () => {
     summary: "Dedicated to innovative architectural solutions and sustainable design.",
     companyUniversity: "XYZ University",
     linkedinLink: "https://www.linkedin.com/in/keiraantao",
-    email: "keira.architecture@example.com",
-    phoneNumber: "+1234567890",
+    email: "keira.msapmpl2023@learner.manipal.edu",
+    phoneNumber: "9067271060",
     profilePicture: { url: profilePic } 
   });
 
