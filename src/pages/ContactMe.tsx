@@ -11,7 +11,7 @@ const ContactMe: React.FC = () => {
     title: "Software Engineer",
     summary: "Passionate about web development and AI.",
     companyUniversity: "XYZ University",
-    linkedinLink: "https://linkedin.com/in/sumanthsamala",
+    linkedinLink: "https://www.linkedin.com/in/keiraantao",
     email: "sumanth@example.com",
     phoneNumber: "+1234567890",
     profilePicture:  { url: profilePic }  // ✅ Add this property

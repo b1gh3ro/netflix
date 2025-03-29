@@ -18,8 +18,8 @@ const ProfileBanner: React.FC = () => {
     setBannerData({
       headline: "Welcome to My Portfolio",
       profileSummary: "Full-stack developer passionate about building innovative web applications.",
-      resumeLink: "https://example.com/resume.pdf",
-      linkedinLink: "https://linkedin.com/in/yourprofile"
+      resumeLink: "https://www.linkedin.com/in/keiraantao",
+      linkedinLink: "https://www.linkedin.com/in/keiraantao"
     });
   }, []);
 
