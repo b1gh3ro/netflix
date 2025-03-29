@@ -23,8 +23,13 @@ const Browse: React.FC = () => {
   ];
 
   const handleProfileClick = (profile: { name: string; image: string; backgroundGif: string }) => {
-    navigate(`/profile/${profile.name}`, { state: { profileImage: profile.image, backgroundGif: profile.backgroundGif } });
+    if (profile.name === "stalker") {
+      window.location.href = "https://www.instagram.com/keiraantao";
+    } else {
+      navigate(`/profile/${profile.name}`, { state: { profileImage: profile.image, backgroundGif: profile.backgroundGif } });
+    }
   };
+  
 
   return (
     <div className="browse-container">
