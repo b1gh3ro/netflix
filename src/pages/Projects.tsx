@@ -1,60 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './Projects.css';
-import { FaReact, FaNodeJs, FaAws, FaDatabase, FaDocker, FaAngular, FaGithub, FaGitlab, FaGoogle, FaJava, FaJenkins, FaMicrosoft, FaPython, FaVuejs } from 'react-icons/fa';
-import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo } from 'react-icons/si';
-import { GrDeploy, GrKubernetes } from "react-icons/gr";
+import { FaSketch } from 'react-icons/fa';
+import { SiAutodesk, SiAdobephotoshop, SiBlender, SiUnrealengine, SiTwinmotion } from 'react-icons/si';
 
 const techIcons: { [key: string]: JSX.Element } = {
-  "ReactJS": <FaReact />,
-  "NodeJS": <FaNodeJs />,
-  "AWS": <FaAws />,
-  "PostgreSQL": <SiPostgresql />,
-  "MongoDB": <SiMongodb />,
-  "Ruby On Rails": <SiRubyonrails />,
-  "Material UI": <SiMaterialdesign />,
-  "HTML5": <SiHtml5 />,
-  "CSS3": <SiCss3 />,
-  "jQuery": <SiJquery />,
-  "AWS-ECS": <SiAwsamplify />,
-  'Cognito': <FaAws />,
-  'Lambda': <FaAws />,
-  'ECS': <FaAws />,
-  'Jenkins': <FaJenkins />,
-  'Docker': <FaDocker />,
-  'GraphQL': <FaDatabase />,
-  'CI/CD': <FaGitlab />,
-  'GitLab': <FaGitlab />,
-  'GitHub': <FaGithub />,
-  'Heroku': <GrDeploy />,
-  'Netlify': <GrDeploy />,
-  'Firebase': <SiFirebase />,
-  'GCP': <FaGoogle />,
-  'Azure': <FaMicrosoft />,
-  'Kubernetes': <GrKubernetes />,
-  'Terraform': <SiTerraform />,
-  'ArgoCD': <SiArgo />,
-  'Java': <FaJava />,
-  'Spring Boot': <FaJava />,
-  'Python': <FaPython />,
-  'Node.js': <FaNodeJs />,
-  'Express.js': <FaNodeJs />,
-  'Hibernate': <FaJava />,
-  'Maven': <FaJava />,
-  'Gradle': <FaJava />,
-  'JUnit': <FaJava />,
-  'Mockito': <FaJava />,
-  'Jest': <FaReact />,
-  'React': <FaReact />,
-  'Angular': <FaAngular />,
-  'Vue.js': <FaVuejs />,
-  'Next.js': <FaReact />,
-  'Gatsby': <FaReact />,
-  'Nuxt.js': <FaVuejs />,
-  'Redux': <FaReact />,
-  'Vuex': <FaVuejs />,
-  'Tailwind CSS': <SiCss3 />,
-  'Bootstrap': <SiCss3 />,
-  'JQuery': <SiJquery />,
+  "AutoCAD": <SiAutodesk />,
+  "Twinmotion": <SiTwinmotion />,
+  "Blender": <SiBlender />,
+  "Photoshop": <SiAdobephotoshop />,
+  "SketchUp": <FaSketch />,
+  "Unreal Engine": <SiUnrealengine />,
 };
 
 interface Project {
@@ -68,20 +23,25 @@ const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    // Replace with your actual projects data source
     setProjects([
       {
-        title: "Portfolio Website",
-        description: "A personal website showcasing my work.",
-        techUsed: "ReactJS, Tailwind CSS, Firebase",
-        image: { url: "/images/portfolio.png" }, // Make sure this path is correct
+        title: "Sustainable Housing Design",
+        description: "Designed an eco-friendly housing complex with passive cooling and renewable materials.",
+        techUsed: "Revit, Twinmotion, Photoshop",
+        image: { url: "/images/sustainable-housing.png" },
       },
       {
-        title: "E-Commerce App",
-        description: "A full-stack e-commerce application.",
-        techUsed: "NodeJS, MongoDB, AWS",
-        image: { url: "/images/ecommerce.png" },
+        title: "Urban Redevelopment Plan",
+        description: "Proposed a smart city layout integrating green spaces and mixed-use developments.",
+        techUsed: "AutoCAD, SketchUp, Blender",
+        image: { url: "/images/urban-plan.png" },
       },
+      {
+        title: "Museum Interior Visualization",
+        description: "Created a high-fidelity interior rendering of a modern art museum using advanced visualization techniques.",
+        techUsed: "Blender, Unreal Engine, Photoshop",
+        image: { url: "/images/museum-interior.png" },
+      }
     ]);
   }, []);
 
