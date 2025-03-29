@@ -7,7 +7,7 @@ import { ContactMe as IContactMe } from '../types';
 const ContactMe: React.FC = () => {
 
   const [userData] = useState<IContactMe>({
-    name: "Sumanth Samala",
+    name: "Keira Antao",
     title: "Software Engineer",
     summary: "Passionate about web development and AI.",
     companyUniversity: "XYZ University",
@@ -22,7 +22,7 @@ const ContactMe: React.FC = () => {
   return (
     <div className="contact-container">
       <div className="linkedin-badge-custom">
-        <img src={profilePic} alt="Sumanth Samala" className="badge-avatar" />
+        <img src={profilePic} alt="Keira Antao" className="badge-avatar" />
         <div className="badge-content">
           <h3 className="badge-name">{userData?.name}</h3>
           <p className="badge-title">{userData.title}</p>
