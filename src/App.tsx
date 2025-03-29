@@ -18,7 +18,7 @@ import Certifications from './pages/Certifications';
 const App: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<NetflixTitle />} />
+      <Route path="/" element={<Browse />} />
       <Route path="/browse" element={<Browse />} />
       <Route path="/profile/:profileName" element={<Layout><ProfilePage /></Layout>} />
       <Route path="/work-permit" element={<Layout><WorkPermit /></Layout>} />
