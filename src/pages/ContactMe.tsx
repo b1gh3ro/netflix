@@ -9,7 +9,7 @@ const ContactMe: React.FC = () => {
     name: "Keira Antao",
     title: "Architectural Designer",
     summary: "Dedicated to innovative architectural solutions and sustainable design.",
-    companyUniversity: "XYZ University",
+    companyUniversity: "Manipal School Of Architecture & Planning",
     linkedinLink: "https://www.linkedin.com/in/keiraantao",
     email: "keira.msapmpl2023@learner.manipal.edu",
     phoneNumber: "9067271060",

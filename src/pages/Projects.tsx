@@ -16,7 +16,6 @@ interface Project {
   title: string;
   description: string;
   techUsed: string;
-  image: { url: string };
 }
 
 const Projects: React.FC = () => {
@@ -25,22 +24,19 @@ const Projects: React.FC = () => {
   useEffect(() => {
     setProjects([
       {
-        title: "Sustainable Housing Design",
-        description: "Designed an eco-friendly housing complex with passive cooling and renewable materials.",
-        techUsed: "Revit, Twinmotion, Photoshop",
-        image: { url: "/images/sustainable-housing.png" },
+        title: "Residence Design",
+        description: "Designed a functional and sustainable residential space with optimized spatial planning, natural ventilation, and energy-efficient materials.",
+        techUsed: "AutoCAD, Twinmotion, Photoshop",
       },
       {
-        title: "Urban Redevelopment Plan",
-        description: "Proposed a smart city layout integrating green spaces and mixed-use developments.",
-        techUsed: "AutoCAD, SketchUp, Blender",
-        image: { url: "/images/urban-plan.png" },
+        title: "Campus Design",
+        description: "Conceptualized a dynamic and inclusive campus layout, integrating pedestrian-friendly pathways, green spaces, and multi-use academic zones.",
+        techUsed: "SketchUp, Blender, Photoshop",
       },
       {
-        title: "Museum Interior Visualization",
-        description: "Created a high-fidelity interior rendering of a modern art museum using advanced visualization techniques.",
+        title: "Resort Design",
+        description: "Developed a luxurious resort master plan, focusing on seamless indoor-outdoor integration, landscape harmony, and experiential guest flow.",
         techUsed: "Blender, Unreal Engine, Photoshop",
-        image: { url: "/images/museum-interior.png" },
       }
     ]);
   }, []);
@@ -56,7 +52,6 @@ const Projects: React.FC = () => {
             className="project-card"
             style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}
           >
-            <img src={project.image.url} alt={project.title} className="project-image" />
             <div className="project-details">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
