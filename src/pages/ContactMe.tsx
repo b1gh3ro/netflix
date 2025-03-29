@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import './ContactMe.css';
-import profilePic from '../images/Keira.jpeg';
-import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
+import profilePic from '../images/avataar.png';
+import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
 import { ContactMe as IContactMe } from '../types';
 
 const ContactMe: React.FC = () => {
-
   const [userData] = useState<IContactMe>({
     name: "Keira Antao",
-    title: "Software Engineer",
-    summary: "Passionate about web development and AI.",
+    title: "Architectural Designer",
+    summary: "Dedicated to innovative architectural solutions and sustainable design.",
     companyUniversity: "XYZ University",
     linkedinLink: "https://www.linkedin.com/in/keiraantao",
-    email: "Keira@example.com",
+    email: "keira.architecture@example.com",
     phoneNumber: "+1234567890",
-    profilePicture:  { url: profilePic }  // ✅ Add this property
+    profilePicture: { url: profilePic } 
   });
 
   if (!userData) return <div>Loading...</div>;
@@ -26,10 +25,11 @@ const ContactMe: React.FC = () => {
         <div className="badge-content">
           <h3 className="badge-name">{userData?.name}</h3>
           <p className="badge-title">{userData.title}</p>
-          <p className="badge-description">
-            {userData.summary}
-          </p>
+          <p className="badge-description">{userData.summary}</p>
           <p className="badge-company">{userData.companyUniversity}</p>
+          <p className="badge-location">
+            <FaMapMarkerAlt className="location-icon" /> Qatar, Doha
+          </p>
           <a
             href={userData.linkedinLink}
             target="_blank"
@@ -41,7 +41,7 @@ const ContactMe: React.FC = () => {
         </div>
       </div>
       <div className="contact-header">
-        <p>I'm always up for a chat or a coffee! Feel free to reach out.</p>
+        <p>I'm always open to discussing new projects and ideas! Feel free to reach out.</p>
       </div>
       <div className="contact-details">
         <div className="contact-item">
@@ -57,7 +57,7 @@ const ContactMe: React.FC = () => {
           </a>
         </div>
         <div className="contact-fun">
-          <p>Or catch up over a coffee ☕</p>
+          <p>Or let's connect over a coffee ☕</p>
           <FaCoffee className="coffee-icon" />
         </div>
       </div>
