@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Certifications.css';
 import { FaExternalLinkAlt, FaUniversity } from 'react-icons/fa';
 import { SiUdemy, SiCoursera, SiIeee } from 'react-icons/si';
 import { Certification } from '../types';
-import { getCertifications } from '../queries/getCertifications';
 const iconData: { [key: string]: JSX.Element } = {
   'udemy': <SiUdemy />,
   'coursera': <SiCoursera />,
@@ -12,18 +11,22 @@ const iconData: { [key: string]: JSX.Element } = {
 }
 
 const Certifications: React.FC = () => {
-
-  const [certifications, setCertifications] = useState<Certification[]>([]);
-
-  useEffect(() => { 
-    async function fetchCertifications() {
-      const data = await getCertifications();
-      setCertifications(data);
+  const [certifications] = useState<Certification[]>([
+    {
+      title: "React Mastery",
+      issuer: "Udemy",
+      link: "https://udemy.com/cert/react",
+      iconName: "udemy",
+      issuedDate: "March 2024"
+    },
+    {
+      title: "Full-Stack Web Development",
+      issuer: "Coursera",
+      link: "https://coursera.com/cert/fullstack",
+      iconName: "coursera",
+      issuedDate: "Jan 2023"
     }
-
-    fetchCertifications();
-  }, []);
-
+  ]);
   if (certifications.length === 0) return <div>Loading...</div>;
 
   return (

@@ -1,22 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './ContactMe.css';
 import profilePic from '../images/sumanth.jpeg';
 import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
 import { ContactMe as IContactMe } from '../types';
-import { getContactMe } from '../queries/getContactMe';
 
 const ContactMe: React.FC = () => {
 
-  const [userData, setUserData] = useState<IContactMe>()
-
-  useEffect(() => {
-    async function fetchUserData() {
-      const data = await getContactMe();
-      setUserData(data);
-    }
-
-    fetchUserData();
-  }, []);
+  const [userData] = useState<IContactMe>({
+    name: "Sumanth Samala",
+    title: "Software Engineer",
+    summary: "Passionate about web development and AI.",
+    companyUniversity: "XYZ University",
+    linkedinLink: "https://linkedin.com/in/sumanthsamala",
+    email: "sumanth@example.com",
+    phoneNumber: "+1234567890",
+    profilePicture:  { url: profilePic }  // ✅ Add this property
+  });
 
   if (!userData) return <div>Loading...</div>;
 

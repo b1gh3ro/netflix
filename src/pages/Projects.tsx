@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Projects.css';
 import { FaReact, FaNodeJs, FaAws, FaDatabase, FaDocker, FaAngular, FaGithub, FaGitlab, FaGoogle, FaJava, FaJenkins, FaMicrosoft, FaPython, FaVuejs } from 'react-icons/fa';
 import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo } from 'react-icons/si';
-import { Project } from '../types';
-import { getProjects } from '../queries/getProjects';
 import { GrDeploy, GrKubernetes } from "react-icons/gr";
 
 const techIcons: { [key: string]: JSX.Element } = {
@@ -59,19 +57,34 @@ const techIcons: { [key: string]: JSX.Element } = {
   'JQuery': <SiJquery />,
 };
 
+interface Project {
+  title: string;
+  description: string;
+  techUsed: string;
+  image: { url: string };
+}
 
 const Projects: React.FC = () => {
-  const [projects, setProjects] = useState<Project[]>([])
-  
-  useEffect(() => { 
-    async function fetchProjects() {
-      const data = await getProjects();
-      setProjects(data);
-    }
-    
-    fetchProjects()
-  }, [])
-  
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    // Replace with your actual projects data source
+    setProjects([
+      {
+        title: "Portfolio Website",
+        description: "A personal website showcasing my work.",
+        techUsed: "ReactJS, Tailwind CSS, Firebase",
+        image: { url: "/images/portfolio.png" }, // Make sure this path is correct
+      },
+      {
+        title: "E-Commerce App",
+        description: "A full-stack e-commerce application.",
+        techUsed: "NodeJS, MongoDB, AWS",
+        image: { url: "/images/ecommerce.png" },
+      },
+    ]);
+  }, []);
+
   if (projects.length === 0) return <div>Loading...</div>;
 
   return (

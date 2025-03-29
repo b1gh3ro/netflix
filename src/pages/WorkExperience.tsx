@@ -5,25 +5,45 @@ import { MdOutlineWork as WorkIcon } from 'react-icons/md';
 import { IoSchool as SchoolIcon } from 'react-icons/io5';
 import { FaStar as StarIcon } from 'react-icons/fa';
 import './WorkExperience.css';
-import { TimelineItem } from '../types';
-import { getTimeline } from '../queries/getTimeline';
 
+// Define the TimelineItem type
+interface TimelineItem {
+  title: string;
+  name: string;
+  dateRange: string;
+  timelineType: 'work' | 'education';
+  techStack?: string;
+  summaryPoints: string | string[];
+}
 
 const WorkExperience: React.FC = () => {
-
-  const [timeLineData, setTimeLineData] = useState<TimelineItem[] | null>(null);
+  const [timeLineData, setTimeLineData] = useState<TimelineItem[]>([]);
 
   useEffect(() => {
-    async function fetchTimelineItem() {
-      const data = await getTimeline();
-      setTimeLineData(data);
-    }
-    fetchTimelineItem();
+    setTimeLineData([
+      {
+        title: "Software Engineer",
+        name: "Tech Corp",
+        dateRange: "Jan 2022 - Present",
+        timelineType: "work",
+        techStack: "React, Node.js, AWS",
+        summaryPoints: [
+          "Developed scalable web applications.",
+          "Implemented CI/CD pipelines.",
+          "Optimized database performance."
+        ]
+      },
+      {
+        title: "Bachelor's in Computer Science",
+        name: "XYZ University",
+        dateRange: "2018 - 2022",
+        timelineType: "education",
+        summaryPoints: "Graduated with honors, specialized in AI and web development."
+      }
+    ]);
   }, []);
 
-
-  if (!timeLineData) return <div>Loading...</div>;
-  console.log("🚀 ~ timeLineData:", timeLineData)
+  if (timeLineData.length === 0) return <div>Loading...</div>;
 
   return (
     <>
@@ -37,10 +57,8 @@ const WorkExperience: React.FC = () => {
             className={`vertical-timeline-element--${item.timelineType}`}
             contentStyle={
               item.timelineType === "work"
-                ? index === 0
-                  ? { background: 'rgb(33, 150, 243)', color: '#fff' }
-                  : { background: 'rgb(240, 240, 240)', color: '#fff' }
-                : { background: 'rgb(255, 224, 230)', color: '#fff' } // Lighter red for education
+                ? { background: index === 0 ? 'rgb(33, 150, 243)' : 'rgb(240, 240, 240)', color: '#fff' }
+                : { background: 'rgb(255, 224, 230)', color: '#fff' }
             }
             contentArrowStyle={
               item.timelineType === "work"
@@ -51,24 +69,24 @@ const WorkExperience: React.FC = () => {
             iconStyle={
               item.timelineType === "work"
                 ? { background: 'rgb(33, 150, 243)', color: '#fff' }
-                : { background: 'rgb(255, 160, 200)', color: '#fff' } // Softer red for education icon
+                : { background: 'rgb(255, 160, 200)', color: '#fff' }
             }
             icon={item.timelineType === "work" ? <WorkIcon /> : <SchoolIcon />}
           >
-            {item.timelineType === "work" ? (
-              <div style={{ color: 'black' }}>
-                <h3 className="vertical-timeline-element-title">{item.title}</h3>
-                <h4 className="vertical-timeline-element-subtitle">{item.name}</h4>
-                <p className="vertical-timeline-element-tech">🔧 {item.techStack}</p>
+            <div style={{ color: 'black' }}>
+              <h3 className="vertical-timeline-element-title">{item.title}</h3>
+              <h4 className="vertical-timeline-element-subtitle">{item.name}</h4>
+              {item.techStack && <p className="vertical-timeline-element-tech">🔧 {item.techStack}</p>}
+              {Array.isArray(item.summaryPoints) ? (
+                <ul>
+                  {item.summaryPoints.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+              ) : (
                 <p>{item.summaryPoints}</p>
-              </div>
-            ) : (
-              <div style={{ color: 'black' }}>
-                <h3 className="vertical-timeline-element-title">{item.name}</h3>
-                <h4 className="vertical-timeline-element-subtitle">{item.title}</h4>
-                <p>{item.summaryPoints}</p>
-              </div>
-            )}
+              )}
+            </div>
           </VerticalTimelineElement>
         ))}
         <VerticalTimelineElement
