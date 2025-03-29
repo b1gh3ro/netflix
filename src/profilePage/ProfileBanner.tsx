@@ -18,8 +18,8 @@ const ProfileBanner: React.FC = () => {
     setBannerData({
       headline: "Welcome to My Portfolio",
       profileSummary: "Aspiring architect and creative designer passionate about crafting immersive environments that inspire and transform. With a keen eye for spatial planning, architectural visualization, and storytelling through design, I strive to merge functionality with aesthetics. Recognized for excellence in architectural representation, BIM modeling, and real-time rendering, I bring a balance of creativity, precision, and technical expertise to every project. Eager to innovate and push boundaries in the world of architecture.",
-      resumeLink: "https://www.linkedin.com/in/keiraantao",
-      linkedinLink: "https://www.linkedin.com/in/keiraantao"
+      resumeLink: "https://drive.google.com/file/d/1b6Fr92TNlluyQUsjtEzlbXAMeQT6aRWD/view?usp=drive_link",
+      linkedinLink: "https://drive.google.com/file/d/1sQbwsFcjaxZ40xNm-0DJDuR-_N4yf0nW/view?usp=drive_link"
     });
   }, []);
 
