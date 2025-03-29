@@ -3,8 +3,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import './ProfilePage.css';
 
 import ProfileBanner from './ProfileBanner';
-import TopPicksRow from './TopPicksRow';
-import ContinueWatching from './ContinueWatching';
+
 type ProfileType = 'recruiter' | 'developer' | 'stalker' | 'adventure';
 
 const ProfilePage: React.FC = () => {
@@ -24,8 +23,7 @@ const ProfilePage: React.FC = () => {
         <ProfileBanner
         />
       </div>
-      <TopPicksRow profile={profile} />
-      <ContinueWatching profile={profile} />
+
     </>
   );
 };
