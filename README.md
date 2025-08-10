@@ -1,4 +1,4 @@
-## 🌟 Keira Antao's Netflix inspired Portfolio 🌟 - https://Keirasamala.com/
+## 🌟 Netflix inspired Portfolio 🌟 - 
 
 Welcome to my personal portfolio project! 🚀 This website showcases my work, skills, and experiences in web development. It's designed to be lightweight, customizable, and professional while maintaining an approachable style.
 
